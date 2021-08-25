@@ -33,11 +33,19 @@ public class Program {
 			System.out.println(obj);
 		}
 
-		System.out.println("\n=== TESTE 3: Seller Insert ===");
+		System.out.println("\n=== TESTE 4: Seller Insert ===");
 		Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", new java.sql.Date(new Date().getTime()), 4000.0,
 				department);
-		sellerDao.insert(newSeller);
+		//sellerDao.insert(newSeller);
 		System.out.println("Inserted! New id = " + newSeller.getId() + " - " + newSeller.getName());
+		
+		
+		System.out.println("\n=== TESTE 5: Seller UPDATE ===");
+		seller = sellerDao.findById(13);
+		seller.setName("Marta Waine");
+		sellerDao.update(seller);
+		System.out.println("Update Completed");
+
 
 	}
 
